@@ -25,14 +25,15 @@ function check_command() {
   echo $(command -v $1 | wc -l | tr -d '[:space:]'); return;
 }
 function check_repo() {
-  if [[ $(cat /etc/apt/sources.list | grep "archive.ubuntu.com/ubuntu/ xenial" | wc -l) == 0 ]]; then
-    echo "
-    deb http://us.archive.ubuntu.com/ubuntu/ xenial universe
-    deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe
-    deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted
-    deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
-    " >> /etc/apt/sources.list
-  fi
+   echo "Skip this function";
+#  if [[ $(cat /etc/apt/sources.list | grep "archive.ubuntu.com/ubuntu/ xenial" | wc -l) == 0 ]]; then
+#    echo "
+#    deb http://us.archive.ubuntu.com/ubuntu/ xenial universe
+#    deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe
+#    deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted
+#    deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
+#    " >> /etc/apt/sources.list
+#  fi
 }
 function check_php() {
   echo $(php -v | grep -oE "(PHP 7\.3|)" | wc -l | tr -d '[:space:]'); return;
