@@ -67,9 +67,9 @@ function check_composer() {
 function join_by { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d}"; }
 function check_packages_list() {
   packagist_list=('python3-mysqldb' 'libmysqlclient-dev' 'python3-dev' \
-  'make' 'gcc' 'openssl' 'apache2' 'lwresd' \
+  'make' 'gcc' 'openssl' 'apache2' \
   'curl' 'zip' 'unzip' 'libnet-ldap-perl' 'ldap-utils' 'ntp' \
-  'libapache2-mod-xsendfile' 'libpcre3-dev:amd64' \
+  'libapache2-mod-xsendfile' 'libpcre3-dev' \
   'libbind-dev')
 
   if [[ $1 == 'list' ]]; then
